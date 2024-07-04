@@ -13,6 +13,8 @@ import {
 } from "@shopify/polaris";
 import { useState } from "react";
 
+import db from "../db.server";
+
 type dataType = {
   name: string | "";
   description: string | "";
@@ -20,16 +22,28 @@ type dataType = {
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const formData = await request.formData();
-  const dataObject = Object.fromEntries(formData);
+  const dataObject = Object.fromEntries(formData) as dataType;
+
+  await db.settings.upsert({
+    where: { id: "1" },
+    update: {
+      id: "1",
+      name: dataObject.name,
+      description: dataObject.description,
+    },
+    create: {
+      id: "1",
+      name: dataObject.name,
+      description: dataObject.description,
+    },
+  });
+
   return dataObject;
 };
 
 export const loader = async () => {
-  let data: dataType = {
-    name: "App name",
-    description: "App description",
-  };
-  return json(data);
+  const settings = await db.settings.findFirst();
+  return json(settings);
 };
 
 export default function SettingsPage() {

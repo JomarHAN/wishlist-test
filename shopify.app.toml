@@ -3,7 +3,7 @@
 client_id = "e4b32b740e0465d6d8c3e2a373957119"
 name = "wishlist-test"
 handle = "wishlist-test-25"
-application_url = "https://river-literary-dc-nh.trycloudflare.com"
+application_url = "https://negative-fit-waterproof-class.trycloudflare.com"
 embedded = true
 
 [build]
@@ -16,9 +16,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://river-literary-dc-nh.trycloudflare.com/auth/callback",
-  "https://river-literary-dc-nh.trycloudflare.com/auth/shopify/callback",
-  "https://river-literary-dc-nh.trycloudflare.com/api/auth/callback"
+  "https://negative-fit-waterproof-class.trycloudflare.com/auth/callback",
+  "https://negative-fit-waterproof-class.trycloudflare.com/auth/shopify/callback",
+  "https://negative-fit-waterproof-class.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
