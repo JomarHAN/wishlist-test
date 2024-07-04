@@ -97,7 +97,8 @@ export default function Index() {
 
   const shopify = useAppBridge();
   const isLoading =
-    ["loading", "submitting"].includes(fetcher.state) && fetcher.formMethod === "POST";
+    ["loading", "submitting"].includes(fetcher.state) &&
+    fetcher.formMethod === "POST";
   const productId = fetcher.data?.product?.id.replace(
     "gid://shopify/Product/",
     "",
@@ -112,11 +113,7 @@ export default function Index() {
 
   return (
     <Page>
-      <TitleBar title="Remix app template">
-        <button variant="primary" onClick={generateProduct}>
-          Generate a product
-        </button>
-      </TitleBar>
+      <TitleBar title="Overview"></TitleBar>
       <BlockStack gap="500">
         <Layout>
           <Layout.Section>

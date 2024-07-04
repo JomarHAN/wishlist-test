@@ -32,7 +32,7 @@ model Session {
 }
 
 model Settings {
-  id          String @id
+  id          String  @id
   name        String
-  description String
+  description String?
 }
