@@ -3,12 +3,13 @@
 client_id = "e4b32b740e0465d6d8c3e2a373957119"
 name = "wishlist-test"
 handle = "wishlist-test-25"
-application_url = "https://negative-fit-waterproof-class.trycloudflare.com"
+application_url = "https://issn-generally-ranked-mounting.trycloudflare.com"
 embedded = true
 
 [build]
 automatically_update_urls_on_dev = true
 dev_store_url = "joel-baby-house.myshopify.com"
+include_config_on_deploy = true
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
@@ -16,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://negative-fit-waterproof-class.trycloudflare.com/auth/callback",
-  "https://negative-fit-waterproof-class.trycloudflare.com/auth/shopify/callback",
-  "https://negative-fit-waterproof-class.trycloudflare.com/api/auth/callback"
+  "https://issn-generally-ranked-mounting.trycloudflare.com/auth/callback",
+  "https://issn-generally-ranked-mounting.trycloudflare.com/auth/shopify/callback",
+  "https://issn-generally-ranked-mounting.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

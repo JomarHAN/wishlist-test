@@ -15,14 +15,14 @@ import { useState } from "react";
 
 import db from "../db.server";
 
-type dataType = {
+type DataType = {
   name: string | "";
   description: string | "";
 };
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const formData = await request.formData();
-  const dataObject = Object.fromEntries(formData) as dataType;
+  const dataObject = Object.fromEntries(formData) as DataType;
 
   await db.settings.upsert({
     where: { id: "1" },
@@ -47,7 +47,7 @@ export const loader = async () => {
 };
 
 export default function SettingsPage() {
-  const loaderData: dataType = useLoaderData();
+  const loaderData: DataType = useLoaderData();
   const [textField, setTextField] = useState(loaderData);
   return (
     <Page
@@ -83,7 +83,7 @@ export default function SettingsPage() {
                   autoComplete=""
                   label="App name"
                   name="name"
-                  value={textField.name}
+                  value={textField?.name || ""}
                   onChange={(value) =>
                     setTextField({ ...textField, name: value })
                   }
@@ -92,7 +92,7 @@ export default function SettingsPage() {
                   autoComplete=""
                   label="Description"
                   name="description"
-                  value={textField.description}
+                  value={textField?.description || ""}
                   onChange={(value) =>
                     setTextField({ ...textField, description: value })
                   }
