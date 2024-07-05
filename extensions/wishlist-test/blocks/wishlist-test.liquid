@@ -1,0 +1,40 @@
+{% style %}
+  .wishlist-container button{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    color: {{block.settings.colour}}
+  }
+
+  .wishlist-container svg {
+    width: 30px;
+    height: 30px;
+  }
+{% endstyle %}
+
+<div class="wishlist-container">
+  <button>
+      {%  render 'favorite-icon' color: block.settings.colour%}
+      <span>{{ block.settings.text }}</span>
+  </button>
+</div>
+
+{% schema %}
+{
+  "name": "Wishlist test",
+  "target": "section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "product", "autofill": true },
+    { "type": "color", "id": "colour", "label": "Star Colour", "default": "#ff0000" },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    }
+  ]
+}
+{% endschema %}
+
