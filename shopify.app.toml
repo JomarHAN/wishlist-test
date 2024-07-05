@@ -3,7 +3,7 @@
 client_id = "e4b32b740e0465d6d8c3e2a373957119"
 name = "wishlist-test"
 handle = "wishlist-test-25"
-application_url = "https://paste-toward-cultures-holder.trycloudflare.com"
+application_url = "https://elections-proud-bundle-because.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://paste-toward-cultures-holder.trycloudflare.com/auth/callback",
-  "https://paste-toward-cultures-holder.trycloudflare.com/auth/shopify/callback",
-  "https://paste-toward-cultures-holder.trycloudflare.com/api/auth/callback"
+  "https://elections-proud-bundle-because.trycloudflare.com/auth/callback",
+  "https://elections-proud-bundle-because.trycloudflare.com/auth/shopify/callback",
+  "https://elections-proud-bundle-because.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
