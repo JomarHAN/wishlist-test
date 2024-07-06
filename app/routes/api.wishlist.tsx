@@ -3,7 +3,7 @@ import { json } from "@remix-run/node";
 import db from "../db.server";
 import { cors } from "remix-utils/cors";
 
-type TypeWishlistItem = {
+type TypeWishlist = {
   customerId: string;
   productId: string;
   shop: string;
@@ -20,7 +20,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
   const method = request.method;
   const formData = await request.formData();
   const dataObj = Object.fromEntries(formData);
-  const { customerId, productId, shop } = dataObj;
+  const { customerId, productId, shop } = dataObj as TypeWishlist;
 
   if (!customerId || !productId || !shop) {
     return json({
@@ -35,11 +35,11 @@ export const action = async ({ request }: ActionFunctionArgs) => {
           customerId,
           productId,
           shop,
-        } as TypeWishlistItem,
+        },
       });
       const response = json({
         message: "post success",
-        method: "post",
+        method: method,
         wishlist: wishlist,
       });
       return cors(request, response);

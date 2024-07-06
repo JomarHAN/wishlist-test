@@ -32,33 +32,33 @@
     document.addEventListener('alpine:init', () => {
         Alpine.data('wishlist', () => ({
             wishlisted: false,
-            appUrl: 'https://belgium-levitra-tutorial-highly.trycloudflare.com',
+            appUrl: 'https://asking-rat-promptly-abstract.trycloudflare.com',
  
             addToWishlist() {
-
-                {% unless customer %}
-                  alert("Please login to add wishlist");
-                  return window.location.href = "/account/login";
+                {%  unless customer %} 
+                  alert("Please login to add to your wishlist"); 
+                  return  window.location.href = '/account/login'
                 {% endunless %}
 
                 const formData = new FormData();
-                formData.append("customerId", "{{ customer.id }}");
-                formData.append("productId", "{{ product.id }}");
-                formData.append("shop", "{{ shop.permanent_domain }}");
+                formData.append("customerId", "{{ customer.id }}")
+                formData.append("productId", "{{ product.id }}")
+                formData.append("shop", "{{ shop.permanent_domain }}")
 
-                const responseOptions = {
+                const requestOptions = {
                   method: "POST",
                   body: formData,
                   redirect: "follow"
                 };
 
-                fetch(this.appUrl + '/api/wishlist', responseOptions)
-                .then((response) => response.text())
-                .then((result) => {
-                  console.log(result);
-                  this.wishlisted = !this.wishlisted;
-                })
-                .catch((error) => console.error(error));
+                fetch(this.appUrl + "/api/wishlist", requestOptions)
+                  .then((response) => response.text())
+                  .then((result) => {
+                    console.log(result)
+                    this.wishlisted = !this.wishlisted;
+                  })
+                  .catch((error) => console.error(error));
+
             }
         }))
     })
