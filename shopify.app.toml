@@ -3,7 +3,7 @@
 client_id = "e4b32b740e0465d6d8c3e2a373957119"
 name = "wishlist-test"
 handle = "wishlist-test-25"
-application_url = "https://loops-pursuant-indicating-britannica.trycloudflare.com"
+application_url = "https://monitor-argued-specials-reasonably.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://loops-pursuant-indicating-britannica.trycloudflare.com/auth/callback",
-  "https://loops-pursuant-indicating-britannica.trycloudflare.com/auth/shopify/callback",
-  "https://loops-pursuant-indicating-britannica.trycloudflare.com/api/auth/callback"
+  "https://monitor-argued-specials-reasonably.trycloudflare.com/auth/callback",
+  "https://monitor-argued-specials-reasonably.trycloudflare.com/auth/shopify/callback",
+  "https://monitor-argued-specials-reasonably.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
