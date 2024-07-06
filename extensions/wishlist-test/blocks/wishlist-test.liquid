@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
-    color: {{block.settings.colour}};
+    color: {{ block.settings.colour }};
     font-size: medium;
     font-weight: 600;
   }
@@ -32,9 +32,33 @@
     document.addEventListener('alpine:init', () => {
         Alpine.data('wishlist', () => ({
             wishlisted: false,
+            appUrl: 'https://deny-payday-indonesia-roland.trycloudflare.com',
  
             addToWishlist() {
-                this.wishlisted = !this.wishlisted
+                {%  unless customer %} 
+                  alert("Please login to add to your wishlist"); 
+                  return  window.location.href = '/account/login'
+                {% endunless %}
+
+                const formData = new FormData();
+                formData.append("customerId", "{{ customer.id }}")
+                formData.append("productId", "{{ product.id }}")
+                formData.append("shop", "{{ shop.permanent_domain }}")
+
+                const requestOptions = {
+                  method: "POST",
+                  body: formData,
+                  redirect: "follow"
+                };
+
+                fetch(this.appUrl + "/api/wishlist", requestOptions)
+                  .then((response) => response.text())
+                  .then((result) => {
+                    console.log(result)
+                    this.wishlisted = !this.wishlisted;
+                  })
+                  .catch((error) => console.error(error));
+
             }
         }))
     })
