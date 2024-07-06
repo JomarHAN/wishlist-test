@@ -33,6 +33,19 @@
         Alpine.data('wishlist', () => ({
             wishlisted: false,
             appUrl: 'https://loops-pursuant-indicating-britannica.trycloudflare.com',
+
+            init(){
+              if(this.wishlisted){
+                this.wishlisted = false
+              }
+
+              fetch(this.appUrl + "/api/wishlist?customerId={{ customer.id }}&productId={{ product.id }}&shop={{ shop.permanent_domain }}")
+              .then((response) => response.json())
+              .then((result) => {
+                this.wishlisted = result.wishlisted
+              })
+              .catch((error) => console.error(error));
+            },
  
             addToWishlist() {
                 {%  unless customer %} 
@@ -44,6 +57,7 @@
                 formData.append("customerId", "{{ customer.id }}")
                 formData.append("productId", "{{ product.id }}")
                 formData.append("shop", "{{ shop.permanent_domain }}")
+                formData.append("_action", this.wishlisted ? "DELETE" : "CREATE")
 
                 const requestOptions = {
                   method: "POST",
