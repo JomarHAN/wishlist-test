@@ -3,7 +3,7 @@
 client_id = "e4b32b740e0465d6d8c3e2a373957119"
 name = "wishlist-test"
 handle = "wishlist-test-25"
-application_url = "https://asking-rat-promptly-abstract.trycloudflare.com"
+application_url = "https://swimming-attendance-expressions-candidates.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://asking-rat-promptly-abstract.trycloudflare.com/auth/callback",
-  "https://asking-rat-promptly-abstract.trycloudflare.com/auth/shopify/callback",
-  "https://asking-rat-promptly-abstract.trycloudflare.com/api/auth/callback"
+  "https://swimming-attendance-expressions-candidates.trycloudflare.com/auth/callback",
+  "https://swimming-attendance-expressions-candidates.trycloudflare.com/auth/shopify/callback",
+  "https://swimming-attendance-expressions-candidates.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
